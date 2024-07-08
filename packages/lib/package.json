@@ -1,0 +1,32 @@
+{
+  "name": "nodejs-library",
+  "type": "module",
+  "scripts": {
+    "build": "./node_modules/.bin/del dist && tsc --project tsconfig.build.json",
+    "test": "node --no-warnings=ExperimentalWarning --loader @swc-node/register/esm --test **/*.spec.ts",
+    "lint": "./node_modules/.bin/eslint",
+    "check-types": "./node_modules/.bin/tsc --noEmit"
+  },
+  "main": "packages/lib/main.ts",
+  "devDependencies": {
+    "@eslint/js": "^9.4.0",
+    "@stylistic/eslint-plugin-js": "^2.1.0",
+    "@stylistic/eslint-plugin-ts": "^2.1.0",
+    "@swc-node/register": "^1.9.1",
+    "@swc/cli": "^0.4.0",
+    "@swc/core": "^1.5.7",
+    "@tsconfig/node22": "^22.0.0",
+    "@tsconfig/strictest": "^2.0.5",
+    "@types/eslint__js": "^8.42.3",
+    "@types/node": "^20.12.12",
+    "@types/user-agents": "^1.0.4",
+    "del-cli": "^5.1.0",
+    "eslint": "^9.4.0",
+    "eslint-plugin-unused-imports": "^4.0.0",
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.11.0"
+  },
+  "dependencies": {
+    "zod": "^3.23.8"
+  }
+}
