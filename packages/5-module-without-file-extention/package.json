@@ -2,9 +2,9 @@
   "name": "module-without-file-extention-demo",
   "type": "module",
   "scripts": {
-    "start": "pnpm build && node --env-file=.env --import=extensionless/register dist/main.js",
+    "start": "pnpm build && node --env-file=.env dist/main.js",
     "dev": "node --experimental-specifier-resolution=node --loader ts-node/esm --env-file=.env --watch-path src/ --watch-path package.json --watch-path tsconfig.json --no-warnings=ExperimentalWarning src/main.ts",
-    "build": "rm -rf ./dist && tsc"
+    "build": "rm -rf ./dist && tsc && pnpm dlx fix-esm-import-path dist"
   },
   "main": "dist/main.js",
   "engines": {
@@ -16,8 +16,5 @@
     "@types/node": "^20.12.12",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
-  },
-  "dependencies": {
-    "extensionless": "^1.9.9"
   }
 }

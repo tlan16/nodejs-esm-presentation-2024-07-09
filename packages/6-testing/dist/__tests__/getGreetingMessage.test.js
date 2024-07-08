@@ -1,5 +1,5 @@
 import { describe, it } from "node:test";
-import { getGreetingMessage } from "../getGreetingMessage";
+import { getGreetingMessage } from "../getGreetingMessage.js";
 import assert from "node:assert";
 describe("getGreetingMessage", () => {
     describe("GIVEN a name", () => {

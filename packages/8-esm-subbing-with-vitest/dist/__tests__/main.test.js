@@ -1,5 +1,5 @@
 import { describe, it, vi, expect } from "vitest";
-import * as getGreetingMessageLib from "../getGreetingMessage";
+import * as getGreetingMessageLib from "../getGreetingMessage.js";
 describe("main", () => {
     it.concurrent("SHOULD run", async (context) => {
         const spy = vi.spyOn(console, 'log');

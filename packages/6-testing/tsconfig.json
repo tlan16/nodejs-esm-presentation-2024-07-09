@@ -6,7 +6,7 @@
   "compilerOptions": {
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "outDir": "./dist/"
+    "outDir": "./dist/",
   },
   "include": ["src/**/*.ts"],
   "ts-node": {

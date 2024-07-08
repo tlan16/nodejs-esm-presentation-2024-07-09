@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { getGreetingMessage } from "../getGreetingMessage";
+import { getGreetingMessage } from "../getGreetingMessage.js";
 describe("getGreetingMessage", () => {
     describe("GIVEN a name", () => {
         const name = "Earth";

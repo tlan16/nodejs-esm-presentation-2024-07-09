@@ -1,6 +1,6 @@
 import { describe, it } from "node:test";
 import assert from "node:assert";
-import * as getGreetingMessageLib from "../getGreetingMessage";
+import * as getGreetingMessageLib from "../getGreetingMessage.js";
 describe("main", () => {
     it("SHOULD run", async (context) => {
         const spy = context.mock.method(console, 'log');
