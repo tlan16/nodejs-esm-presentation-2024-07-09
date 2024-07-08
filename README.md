@@ -1,17 +1,13 @@
+This is a demo how my nodejs application template is built. 
+
+The ready to use template is at https://github.com/tlan16/node-typescript-application-template. 
+
 # Node.js library template
 
 It uses:
 
-1. Lerna for monorepo management.
-2. Includes a private test package to mimic using the lib as a dependency.
-3. EcmaScript Modules (ESM)
-4. Native file watcher for dev server. No need for nodemon.
-5. Native testing and assertions. No need for jest.
-6. swc (written in Rust) as dev ts to js compiler for better performance.
-7. pnpm and corepack for package management.
-8. latest eslint with flat config.
-9. Used eslint stylistic instead prettier.
-
-Example projects using this template:
-
-1. https://www.npmjs.com/package/lib-racv-http-client
+1. EcmaScript Modules (ESM)
+2. Native file watcher for dev server. No need for nodemon.
+3. Native .env file handler. No need for dotenv.
+6. pnpm and corepack for package management.
+9. ESM named export mocking with vitest.
