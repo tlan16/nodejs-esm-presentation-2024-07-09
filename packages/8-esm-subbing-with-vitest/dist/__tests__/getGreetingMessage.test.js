@@ -1,12 +1,11 @@
-import { describe, it } from "node:test";
+import { describe, expect, it } from "vitest";
 import { getGreetingMessage } from "../getGreetingMessage";
-import assert from "node:assert";
 describe("getGreetingMessage", () => {
     describe("GIVEN a name", () => {
         const name = "Earth";
-        it("SHOULD return a greeting message", () => {
+        it.concurrent("SHOULD return a greeting message", () => {
             const result = getGreetingMessage(name);
-            assert.strictEqual(result, `Hello, ${name}!`);
+            expect(result).toEqual(`Hello, ${name}!`);
         });
     });
 });

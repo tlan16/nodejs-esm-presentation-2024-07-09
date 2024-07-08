@@ -1,26 +1,21 @@
-import { describe, it } from "node:test";
-import assert from "node:assert";
+import { describe, it, vi, expect } from "vitest";
 import * as getGreetingMessageLib from "../getGreetingMessage";
-import { getGreetingMessage } from "../getGreetingMessage";
 describe("main", () => {
-    it("SHOULD run", async (context) => {
-        const spy = context.mock.method(console, 'log');
+    it.concurrent("SHOULD run", async (context) => {
+        const spy = vi.spyOn(console, 'log');
         await import("../main");
-        assert.strictEqual(spy.mock.callCount(), 2);
-        spy.mock.restore();
+        expect(spy).toHaveBeenCalledTimes(2);
+        spy.mockReset();
     });
-    describe("use node test runner", () => {
-        // skip because it always fails. Try it out by removing the skip.
-        it.skip("use mock.method", async (context) => {
-            const spy = context.mock.method(getGreetingMessageLib, 'getGreetingMessage');
-            await import("../main");
-            assert.strictEqual(spy.mock.callCount(), 1);
-        });
-        // skip because it always fails. Try it out by removing the skip.
-        it.skip("use mock.fn", async (context) => {
-            const spy = context.mock.fn(getGreetingMessage);
-            getGreetingMessage("Earth");
-            assert.strictEqual(spy.mock.callCount(), 1);
-        });
+    it.concurrent("should mock getGreetingMessage return value", async (context) => {
+        const consoleLogSpy = vi.spyOn(console, 'log');
+        const getGreetingMessageSpy = vi
+            .spyOn(getGreetingMessageLib, 'getGreetingMessage')
+            .mockReturnValueOnce("Hello, Mars!");
+        await import("../main");
+        expect(getGreetingMessageSpy).toHaveBeenCalled();
+        expect(consoleLogSpy).toHaveBeenCalledWith("Hello, Mars!");
+        getGreetingMessageSpy.mockRestore();
+        consoleLogSpy.mockReset();
     });
 });
