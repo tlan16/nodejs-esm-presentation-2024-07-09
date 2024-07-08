@@ -4,8 +4,7 @@
   "private": true,
   "dependencies": {},
   "scripts": {
-    "test": "lerna run --parallel test",
-    "lint": "lerna run --parallel lint",
+    "build": "lerna run --parallel build",
     "prepare": "husky"
   },
   "devDependencies": {
@@ -13,6 +12,9 @@
     "lint-staged": "^15.2.2",
     "@types/lint-staged": "^13.3.0",
     "husky": "^9.0.11"
+  },
+  "engines": {
+    "node": "^22.2.0"
   },
   "packageManager": "pnpm@9.4.0"
 }

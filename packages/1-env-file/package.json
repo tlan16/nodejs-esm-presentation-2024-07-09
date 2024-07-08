@@ -1,0 +1,12 @@
+{
+  "name": "env-file-demo",
+  "type": "module",
+  "scripts": {
+    "start": "node --env-file=.env src/main.js"
+  },
+  "main": "src/main.js",
+  "engines": {
+    "node": "^22.2.0"
+  },
+  "packageManager": "pnpm@9.5.0"
+}

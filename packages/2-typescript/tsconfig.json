@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  // although typescript support extending multiple configs,
+  // ts-node support isn't great.
+  "extends": "@tsconfig/node-lts/tsconfig.json",
+  "compilerOptions": {
+    "moduleResolution": "Node16",
+    "outDir": "./dist/"
+  },
+  "include": ["src/**/*.ts"],
+}
