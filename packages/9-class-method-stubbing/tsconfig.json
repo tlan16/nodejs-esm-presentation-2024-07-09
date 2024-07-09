@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  // although typescript support extending multiple configs,
+  // ts-node support isn't great.
+  "extends": "@tsconfig/node-lts/tsconfig.json",
+  "compilerOptions": {
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "outDir": "./dist/"
+  },
+  "include": ["src/**/*.ts"],
+  "ts-node": {
+    "transpileOnly": true
+  }
+}
